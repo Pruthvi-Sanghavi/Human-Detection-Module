@@ -20,7 +20,7 @@ Expected behavior of the HD Module (Images from: Machine Learning by Andrew Ng, 
 
 ## AIP
 
-[Team Review Notes](https://docs.google.com/spreadsheets/d/1GTG-HFxleuQxyrf_1kyI84y_j7N_5Z9h/edit#gid=472316199) 
+[Team Review Notes](https://docs.google.com/document/d/1l4MobMQTboG7WJ2R91XRQfdRSrPovTTvhYkaVo5h1yo/edit?ts=5da49b2d) 
 
 [AIP Spreadsheet](https://drive.google.com/file/d/1GTG-HFxleuQxyrf_1kyI84y_j7N_5Z9h/view?usp=sharing) 
 
