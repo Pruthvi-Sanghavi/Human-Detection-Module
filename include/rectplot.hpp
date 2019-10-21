@@ -27,27 +27,40 @@
  * SOFTWARE.
  */
 
-#ifndef INCLUDE_RECTPLOT_HPP_
-#define INCLUDE_RECTPLOT_HPP_
+#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_
+#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_
 
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
+#include <Eigen/Dense>
+#include <iomanip>
+#include <string>
+#include <iostream>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 class RectPlot {
  private:
-  int grpLoc;/**< variable to hold an x,y,w,h parameters of detected object as a number xywh */
+  int px;  ///< top left pixel x-coordinate of bounding rectangle
+  int py;  ///< top left pixel y-coordinate of bounding rectangle
+  int pw;  ///< pixel width of bounding rectangle
+  int ph;  ///< pixel height of bounding rectangle
 
  public:
   /**
    * plot a rectangular envelop over a detected object
-   * @param img cv::Mat&
+   * @param cv::Mat&
    * @param x int
    * @param y int
    * @param w int
    * @param h int
-   * @return grpLoc int
+   * @return int
    */
-  int plot(cv::Mat &img, int x, int y, int w, int h);
-};
+  int plot(cv::Mat&, int x, int y, int w, int h);
 
-#endif /* INCLUDE_RECTPLOT_HPP_ */
+  /**
+   * convert image coordinates to world coordinate system
+   * @param cv::Mat&
+   * @return int
+   */
+  int worldCord(cv::Mat&);
+};
+#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_

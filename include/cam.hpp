@@ -1,6 +1,6 @@
 /**
  * @file cam.hpp
- * @brief initializing video input through webcam
+ * @brief initializing video input with a recorded clip
  * @author Varun Asthana
  * @author Pruthvikumar Sanghavi
  *
@@ -27,23 +27,39 @@
  * SOFTWARE.
  */
 
-#ifndef INCLUDE_CAM_HPP_
-#define INCLUDE_CAM_HPP_
+#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_
+#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_
 
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
+#include <iostream>
+#include <string>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 class Cam {
  private:
-  cv::VideoCapture feed; /**< variable to hold input from webcam */
+  cv::VideoCapture feed;  ///< variable to hold video input
 
  public:
   /**
-   * read video data into feed
-   * @param NULL
-   * @return frameImage cv::Mat
+   * overloaded function to read video from a video file into feed
+   * @param demoPath std::string
+   * @return int
    */
-  cv::Mat readVideo();
-};
+  int readVideo(std::string demoPath);
 
-#endif /* INCLUDE_CAM_HPP_ */
+  /**
+   * read each frame of the video feed
+   * @param cv::MAT&
+   * @return int
+   */
+  int readFrameImage(cv::Mat&);
+
+  /**
+   * convert RBG image to grayscale
+   * @param frameImage cv::Mat%
+   * @param grayImage cv::Mat%
+   * @return grayImgSize int
+   */
+  int color2gray(cv::Mat&, cv::Mat&);
+};
+#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_

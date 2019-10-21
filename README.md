@@ -7,11 +7,7 @@
 ---
 
 ## Overview
-Acme Robotics is developing a new series of robots to add to its portfolio– warehouse management robots (WMR). WMR's main function would be to carry goods from one place to another in a warehouse. One of the issue with such a market is: not all warehouses work on 100% automation, this means that WMRs would often be working in a workspace shared by humans. This raises the issue of safety for the humans working in the warehouse. As a safety counter-measure it is desired that WMRs should not collide with any human.
-
-To achieve the goal of coallision avoidance of WMRs with humans, Acme Robotics reached out to our team to provide a ready to install solution. Our team is developing a Human Detector (HD) module which will identenfy the presence of any human in the vicinity of the robot (in its field of view) and provide the coordinates of the detected human in the robot's coordinate system. These coordinates can then be used by other modules of the WMR developed by Acme Robotics, like-real time path planning module, to modify the travel path of the WMR to avoid any possibility of a collision.
-
-Our HD module works on the principles of supervised learning by utilizing Haar Cascade Classifier for object detection (humans in our case) from the OpenCV library. OpenCV library is covered under the 3-clause BSD License. HD module will use an on-board camera provided in the WMR to capture videos. But for our testing purposes, we will make use of a webcam of a laptop. HD module will process the captured images (frame by frame) to detect the presence of any human, and then return their coordinates in the 2D-coordinate frame corresponding to the field of view of the robot. This data will contain bottom left (x,y),  bottom right (x,y) and height of the enveloping rectangular box around the detected humans.
+The development exercise deals with the design and development of a perception module for the new product line of Acme Robotics – warehouse management robots (WMR), for carrying the goods from one place to another in a workspace shared by humans. Hence it is desired that WMRs should not collide with anyone. This problem can be solved by implementing our Human Detector(HD) module. Our HD module works on the principle of supervised learning by utilizing Haar Cascade Classifier for object detection (humans in our case). HD module will use an on-board camera provided in the WMR. It will process the captured images (frame by frame) to detect the presence of any human. The module will return the coordinates of the detected human(s) in the 2D-coordinate frame corresponding to the field of view of the robot. This data will contain bottom left (x,y), bottom right (x,y) and height of the enveloping rectangular box around the detected humans. This data can then be processed by other modules developed by Acme Robotics like-real time path planning, to modify the travel path of the WMR to avoid any possibility of a collision.
 
 <p align="center">
 <img src="https://github.com/varunasthana92/hello-world/blob/master/additional_files/expected_behaviour.png">
@@ -20,20 +16,16 @@ Expected behavior of the HD Module (Images from: Machine Learning by Andrew Ng, 
 
 ## AIP
 
-[Team Review Notes](https://docs.google.com/document/d/1l4MobMQTboG7WJ2R91XRQfdRSrPovTTvhYkaVo5h1yo/edit?usp=sharing) 
+[Team Review Notes](https://docs.google.com/spreadsheets/d/1GTG-HFxleuQxyrf_1kyI84y_j7N_5Z9h/edit#gid=472316199) 
 
 [AIP Spreadsheet](https://drive.google.com/file/d/1GTG-HFxleuQxyrf_1kyI84y_j7N_5Z9h/view?usp=sharing) 
 
-### Team Details
-1) Varun Asthana: A graduate student in the University of Maryland pursuing a Master's Degree in Robotics. Completed his Bachelor's degree in Mechanical Engineering in 2014 and has a work experience of 5 years with an automobile manufacturing firm in India.
-
-2) Pruthvikumar Sanghavi: A graduate student in the University of Maryland pursuing a Master's Degree in Robotics
-
 
 ## Approach
-The presence of humans in a webcam feed is detected by the use of Haar Cascade Classifier from the OpenCV library. Cascade functionality can be used to detect objects by importing a trained model XML file. These XML files can be of a pre-trained model or can be generated using command prompt utility of the OpenCV. For this project our team created a new model from scratch using pre-acquired training dataset. We will thus first higlight the steps to generate a new cascade model. Before we can proceed with the model generation, we first need to install OpenCV and related dependancies.
+The presence of humans in a webcam feed is detected by the use of Haar Cascade Classifier from the OpenCV library, which is covered under the 3-clause BSD License. Cascade functionality can be used to detect objects by importing a trained model XML file. These XML files can be of a pre-trained model or can be generated using command prompt utility of the OpenCV. For this project our team created a new model from scratch. We will thus first higlight the steps to generate a new cascade model.
 
-#### Installing OpenCV and related dependancies
+### First Things First
+#### Installing OpenCV and related Dependancies
 ```
 $ sudo apt-get update
  
@@ -72,7 +64,7 @@ $ python
 >>> exit()
 ```
 
-### How to create and train a Haar Cascade model
+### How to train a cascade model
 For any deep learning based training and model generation the most important thing is to have a dataset of POSITIVE and NEGATIVE instances. In this case the postive instances refer to a set of images which contain human object(s) and negative instances refer to a set of images which do not contain humans. Positive dataset is taken from [Horses or Humans](https://www.kaggle.com/sanikamal/horses-or-humans-dataset) and negative dataset is taken from [INRIA Person Dataset](http://pascal.inrialpes.fr/data/human/).
 
 Follow the below steps-
@@ -102,7 +94,6 @@ opencv_traincascade -data data -vec positives.vec -bg bgNeg.txt -numPos 500-numN
 ```
 
 Training is a time demanding and computationally expensive process. Larger the number of instances, traininig stages, -w and -h parametrs, the more time it takes. We used 527 positive instances with w=36 and h=110 over 10 stages, and it took 16hrs (approx.) for one model to train.
-
 
 
 

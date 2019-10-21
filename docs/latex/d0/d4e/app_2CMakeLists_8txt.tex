@@ -1,0 +1,46 @@
+\hypertarget{app_2CMakeLists_8txt}{}\doxysection{app/\+C\+Make\+Lists.txt File Reference}
+\label{app_2CMakeLists_8txt}\index{app/CMakeLists.txt@{app/CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{app_2CMakeLists_8txt_ab3d3ab91616d93113cb589d83b42a377}{add\+\_\+executable}} (human\+Detect main.\+cpp cam.\+cpp cascade.\+cpp rectplot.\+cpp) include\+\_\+directories(\$
+\item 
+include \mbox{\hyperlink{app_2CMakeLists_8txt_aed73df8fb53cad0726813ff428c4e82c}{target\+\_\+include\+\_\+directories}} (human\+Detect P\+U\+B\+L\+IC \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\}/include \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\}/include/Eigen \$\{Open\+C\+V\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+D\+I\+RS\}) target\+\_\+link\+\_\+libraries(human\+Detect \$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{app_2CMakeLists_8txt_ab3d3ab91616d93113cb589d83b42a377}\label{app_2CMakeLists_8txt_ab3d3ab91616d93113cb589d83b42a377}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!add\_executable@{add\_executable}}
+\index{add\_executable@{add\_executable}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{add\_executable()}{add\_executable()}}
+{\footnotesize\ttfamily add\+\_\+executable (\begin{DoxyParamCaption}\item[{human\+Detect main.\+cpp cam.\+cpp cascade.\+cpp rectplot.}]{cpp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3      \{CMAKE\_SOURCE\_DIR\}/include}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{app_2CMakeLists_8txt_aed73df8fb53cad0726813ff428c4e82c}\label{app_2CMakeLists_8txt_aed73df8fb53cad0726813ff428c4e82c}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!target\_include\_directories@{target\_include\_directories}}
+\index{target\_include\_directories@{target\_include\_directories}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{target\_include\_directories()}{target\_include\_directories()}}
+{\footnotesize\ttfamily include target\+\_\+include\+\_\+directories (\begin{DoxyParamCaption}\item[{human\+Detect P\+U\+B\+L\+IC \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\}/include \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\}/include/Eigen \$\{Open\+C\+V\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+D\+I\+RS\}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                                \{CMAKE\_SOURCE\_DIR\}/include}
+\DoxyCodeLine{7                         \$\{CMAKE\_SOURCE\_DIR\}/include/Eigen}
+\DoxyCodeLine{8                         \$\{OpenCV\_INCLUDE\_DIRS\})}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 target\_link\_libraries(humanDetect \$\{OpenCV\_LIBS\} )}
+
+\end{DoxyCode}
