@@ -62,6 +62,8 @@ $ make -j4
 $ sudo make install
 
 $ sudo ldconfig
+
+$ sudo apt-get install python-opencv
 ```
 Check if everything is done by running below command. A version should be displayed.
 ```
@@ -103,7 +105,64 @@ opencv_traincascade -data data -vec positives.vec -bg bgNeg.txt -numPos 500-numN
 
 Training is a time demanding and computationally expensive process. Larger the number of instances, traininig stages, -w and -h parametrs, the more time it takes. We used 527 positive instances with w=36 and h=110 over 10 stages, and it took 16hrs (approx.) for one model to train.
 
+# Dependencies 
 
+``` 
+Eigen 3.3.7
 
+```
+It has been provided in the repository.
 
+# Known issues/bugs
+
+cpplint error in header guards and so was required to added full path as a string for the guard.
+
+# How to build
+
+```
+$ cd MidTermGroup_14
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ make test
+```
+# How to run demo
+
+```
+$ cd MidTermGroup-14
+$ cd build
+$ ./app/humanDetect
+```
+# How to run tests
+
+```
+$ cd MidTermGroup-4
+$ cd build
+$ ./test/cpp-test
+```
+# Installing Doxygen and generating doxygen documentation
+
+```
+$ git clone https://github.com/doxygen/doxygen.git
+$ cd doxygen
+$ mkdir build
+$ cd build
+$ cmake -G "Unix Makefiles" ..
+$ make
+$ sudo make install
+$ cd
+$ doxygen -g dconfig
+$ cd MidTermGroup-14
+```
+The above commands are used to generate doxygen documentation. This file for our project has been provided in the repository as DoxyConfig.
+
+# Function that gives the world coordinates
+As depth is not considered i.e. z=0, it is assumed that the
+    object is detected at a distance of 8ft (also 1ft = 304mm)
+    From lens formula, magnification can be found as:
+    |m| = |f|/(|u|+|f|)
+4X4 Homogeneous transformation matrix for world frame of type
+    Eigen::matrix (double)
+    it is a combination of rotation and translation matrix
 
