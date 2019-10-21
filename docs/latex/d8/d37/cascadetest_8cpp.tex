@@ -1,0 +1,109 @@
+\hypertarget{cascadetest_8cpp}{}\doxysection{test/cascadetest.cpp File Reference}
+\label{cascadetest_8cpp}\index{test/cascadetest.cpp@{test/cascadetest.cpp}}
+
+
+unit testing of \mbox{\hyperlink{classCascade}{Cascade}} class  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}cam.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cascade.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cascadetest_8cpp_accda36a4c0e87ee9279fd5e0401c4e67}{T\+E\+ST}} (Cascade\+Test, testinit)
+\item 
+\mbox{\hyperlink{cascadetest_8cpp_aab198d2bdea5aaf8245ce0c9ece4db1c}{T\+E\+ST}} (Cascade\+Test, testload\+Cascade)
+\item 
+\mbox{\hyperlink{cascadetest_8cpp_a4a423de92572e71dd9bce760e638280f}{T\+E\+ST}} (Cascade\+Test, testobject\+Detect)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+unit testing of \mbox{\hyperlink{classCascade}{Cascade}} class 
+
+\begin{DoxyAuthor}{Author}
+Varun Asthana 
+
+Pruthvikumar Sanghavi
+\end{DoxyAuthor}
+Copyright \mbox{[}2019\mbox{]} Group14
+
+M\+IT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cascadetest_8cpp_accda36a4c0e87ee9279fd5e0401c4e67}\label{cascadetest_8cpp_accda36a4c0e87ee9279fd5e0401c4e67}} 
+\index{cascadetest.cpp@{cascadetest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!cascadetest.cpp@{cascadetest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cascade\+Test}]{,  }\item[{testinit}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file cascadetest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                             \{}
+\DoxyCodeLine{35   \mbox{\hyperlink{classCascade}{Cascade}} a;}
+\DoxyCodeLine{36   cv::Mat refImg1, refImg2, refImg3;}
+\DoxyCodeLine{37   refImg1 = cv::imread(\textcolor{stringliteral}{"../test/human01-\/01.png"});}
+\DoxyCodeLine{38   refImg2 = cv::imread(\textcolor{stringliteral}{"../test/human01-\/01g.png"});}
+\DoxyCodeLine{39   EXPECT\_DOUBLE\_EQ(1, a.\mbox{\hyperlink{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}{init}}(refImg1, refImg2));}
+\DoxyCodeLine{40   refImg3 = cv::imread(\textcolor{stringliteral}{"../test/dog\_1g.png"});}
+\DoxyCodeLine{41   ASSERT\_FALSE(a.\mbox{\hyperlink{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}{init}}(refImg1, refImg3));}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cascadetest_8cpp_aab198d2bdea5aaf8245ce0c9ece4db1c}\label{cascadetest_8cpp_aab198d2bdea5aaf8245ce0c9ece4db1c}} 
+\index{cascadetest.cpp@{cascadetest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!cascadetest.cpp@{cascadetest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cascade\+Test}]{,  }\item[{testload\+Cascade}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file cascadetest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                    \{}
+\DoxyCodeLine{45   \mbox{\hyperlink{classCascade}{Cascade}} a;}
+\DoxyCodeLine{46   std::string path1 = \textcolor{stringliteral}{"../test/humanDetectCascade.xml"};}
+\DoxyCodeLine{47   EXPECT\_DOUBLE\_EQ(1, a.\mbox{\hyperlink{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}{loadCascade}}(path1));}
+\DoxyCodeLine{48   path1 = \textcolor{stringliteral}{"../xyz/a.xml"};}
+\DoxyCodeLine{49   ASSERT\_FALSE(a.\mbox{\hyperlink{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}{loadCascade}}(path1));}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cascadetest_8cpp_a4a423de92572e71dd9bce760e638280f}\label{cascadetest_8cpp_a4a423de92572e71dd9bce760e638280f}} 
+\index{cascadetest.cpp@{cascadetest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!cascadetest.cpp@{cascadetest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cascade\+Test}]{,  }\item[{testobject\+Detect}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file cascadetest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                     \{}
+\DoxyCodeLine{53   \mbox{\hyperlink{classCascade}{Cascade}} a;}
+\DoxyCodeLine{54   cv::Mat img1, img2;}
+\DoxyCodeLine{55   std::vector<cv::Rect> border;}
+\DoxyCodeLine{56   img1 = cv::imread(\textcolor{stringliteral}{"../test/objdet1.JPG"});}
+\DoxyCodeLine{57   img2 = cv::imread(\textcolor{stringliteral}{"../test/objdet1g.JPG"});}
+\DoxyCodeLine{58   std::string path1 = \textcolor{stringliteral}{"../test/humanDetectCascade.xml"};}
+\DoxyCodeLine{59   ASSERT\_TRUE(a.\mbox{\hyperlink{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}{loadCascade}}(path1));}
+\DoxyCodeLine{60   ASSERT\_TRUE(a.\mbox{\hyperlink{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}{init}}(img1, img2));}
+\DoxyCodeLine{61   EXPECT\_LE(2, a.\mbox{\hyperlink{classCascade_acb0bbd66e243a0fbdb822382e27a2a27}{objectDetect}}(border));}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}

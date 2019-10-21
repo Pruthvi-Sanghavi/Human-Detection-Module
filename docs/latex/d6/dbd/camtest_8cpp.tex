@@ -1,0 +1,102 @@
+\hypertarget{camtest_8cpp}{}\doxysection{test/camtest.cpp File Reference}
+\label{camtest_8cpp}\index{test/camtest.cpp@{test/camtest.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}cam.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{camtest_8cpp_a7261d02f85e8aaa0d6fabffd79ddd36a}{T\+E\+ST}} (Cam\+Test, testread\+Video)
+\item 
+\mbox{\hyperlink{camtest_8cpp_a131263d82f747605a411c6d5b7613736}{T\+E\+ST}} (Cam\+Test, testread\+Video1)
+\item 
+\mbox{\hyperlink{camtest_8cpp_abbbcc686318ceaf04fea69c11091cc5f}{T\+E\+ST}} (Cam\+Test, testread\+Frame\+Image)
+\item 
+\mbox{\hyperlink{camtest_8cpp_aeea7664e608222383cf75a6bbbeb8661}{T\+E\+ST}} (Cam\+Test, testcolor2gray)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{camtest_8cpp_aeea7664e608222383cf75a6bbbeb8661}\label{camtest_8cpp_aeea7664e608222383cf75a6bbbeb8661}} 
+\index{camtest.cpp@{camtest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!camtest.cpp@{camtest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cam\+Test}]{,  }\item[{testcolor2gray}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file camtest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                               \{}
+\DoxyCodeLine{58   \mbox{\hyperlink{classCam}{Cam}} a;}
+\DoxyCodeLine{59   std::string d = \textcolor{stringliteral}{"../test/test1.mp4"};}
+\DoxyCodeLine{60   cv::Mat refImg;}
+\DoxyCodeLine{61   ASSERT\_TRUE(a.\mbox{\hyperlink{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}{readVideo}}(d));}
+\DoxyCodeLine{62   EXPECT\_DOUBLE\_EQ(4, a.\mbox{\hyperlink{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}{readFrameImage}}(refImg));}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{camtest_8cpp_abbbcc686318ceaf04fea69c11091cc5f}\label{camtest_8cpp_abbbcc686318ceaf04fea69c11091cc5f}} 
+\index{camtest.cpp@{camtest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!camtest.cpp@{camtest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cam\+Test}]{,  }\item[{testread\+Frame\+Image}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file camtest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                   \{}
+\DoxyCodeLine{48   \mbox{\hyperlink{classCam}{Cam}} a;}
+\DoxyCodeLine{49   std::string d = \textcolor{stringliteral}{"../test/test1.mp4"};}
+\DoxyCodeLine{50   cv::Mat refImg1, refImg2;}
+\DoxyCodeLine{51   EXPECT\_DOUBLE\_EQ(2, a.\mbox{\hyperlink{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}{readVideo}}(d));}
+\DoxyCodeLine{52   EXPECT\_DOUBLE\_EQ(4, a.\mbox{\hyperlink{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}{readFrameImage}}(refImg1));}
+\DoxyCodeLine{53   EXPECT\_DOUBLE\_EQ(static\_cast<int>(refImg1.total()),}
+\DoxyCodeLine{54                    a.\mbox{\hyperlink{classCam_a33bfd254bc8429eaf422f63d98170653}{color2gray}}(refImg1, refImg2));}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{camtest_8cpp_a7261d02f85e8aaa0d6fabffd79ddd36a}\label{camtest_8cpp_a7261d02f85e8aaa0d6fabffd79ddd36a}} 
+\index{camtest.cpp@{camtest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!camtest.cpp@{camtest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cam\+Test}]{,  }\item[{testread\+Video}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file camtest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                              \{}
+\DoxyCodeLine{34   \mbox{\hyperlink{classCam}{Cam}} a;}
+\DoxyCodeLine{35   cv::Mat refImg;}
+\DoxyCodeLine{36   std::string demo = \textcolor{stringliteral}{"../test/test1.mp4"};}
+\DoxyCodeLine{37   EXPECT\_DOUBLE\_EQ(2, a.\mbox{\hyperlink{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}{readVideo}}(demo));}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{camtest_8cpp_a131263d82f747605a411c6d5b7613736}\label{camtest_8cpp_a131263d82f747605a411c6d5b7613736}} 
+\index{camtest.cpp@{camtest.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!camtest.cpp@{camtest.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily T\+E\+ST (\begin{DoxyParamCaption}\item[{Cam\+Test}]{,  }\item[{testread\+Video1}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file camtest.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                               \{}
+\DoxyCodeLine{41   \mbox{\hyperlink{classCam}{Cam}} a;}
+\DoxyCodeLine{42   cv::Mat refImg;}
+\DoxyCodeLine{43   EXPECT\_DOUBLE\_EQ(0, a.\mbox{\hyperlink{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}{readVideo}}(\textcolor{stringliteral}{"../xyz/est1.mp4"}));}
+\DoxyCodeLine{44   EXPECT\_DOUBLE\_EQ(3, a.\mbox{\hyperlink{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}{readFrameImage}}(refImg));}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
