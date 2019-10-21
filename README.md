@@ -174,12 +174,27 @@ $ cd MidTermGroup-14
 The above commands are used to generate doxygen documentation. This file for our project has been provided in the repository as DoxyConfig.
 
 # Function that gives the world coordinates
-As depth is not considered i.e. z=0, it is assumed that the
-    object is detected at a distance of 8ft (also 1ft = 304mm)
-    From lens formula, magnification can be found as:
-    |m| = |f|/(|u|+|f|)
-4X4 Homogeneous transformation matrix for world frame of type
-    Eigen::matrix (double)
-    it is a combination of rotation and translation matrix
+```
+A homogeneous matrix trasformation and lens formula are used to convert from the image cordinate to the world cordinate.
+The image origin is at the top left corner with positive x axis pointing towards right, and positive y axis pointing towards bottom.While the world coordinate (view point of robot) is set with origin at the center of view and positive x axis towards right and positive y axis pointing upwards.
+
+This give the roational matrix as
+r= [ 1 0 0
+     0 -1 0
+     0 0 -1]
+
+Translation (from world origin to image origin) = [ -Image width /2
+						     Image height /2
+							0];
+
+Homogenenous matrix from image to world frame is :
+
+h= [ R T
+     0 1};
+
+World Cordinate = H* Image Cordinate;
+
+(with z assumed to be 0) 
+```
 
 
