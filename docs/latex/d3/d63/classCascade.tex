@@ -1,0 +1,122 @@
+\hypertarget{classCascade}{}\doxysection{Cascade Class Reference}
+\label{classCascade}\index{Cascade@{Cascade}}
+
+
+{\ttfamily \#include $<$cascade.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}{init}} (cv\+::\+Mat \&, cv\+::\+Mat \&)
+\item 
+int \mbox{\hyperlink{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}{load\+Cascade}} (const std\+::string \&file\+Path)
+\item 
+int \mbox{\hyperlink{classCascade_acb0bbd66e243a0fbdb822382e27a2a27}{object\+Detect}} (std\+::vector$<$ cv\+::\+Rect $>$ \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 40 of file cascade.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}\label{classCascade_aff6861527067a4ea7b9f1ad2ca395a81}} 
+\index{Cascade@{Cascade}!init@{init}}
+\index{init@{init}!Cascade@{Cascade}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int Cascade\+::init (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{i,  }\item[{cv\+::\+Mat \&}]{g }\end{DoxyParamCaption})}
+
+load cascade xml file 
+\begin{DoxyParams}{Parameters}
+{\em cv\+::\+Mat\%} & \\
+\hline
+{\em cv\+::\+Mat\%} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file cascade.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                                     \{}
+\DoxyCodeLine{33   frameImage = i;}
+\DoxyCodeLine{34   grayImage = g;}
+\DoxyCodeLine{35   \textcolor{keywordflow}{if} (frameImage.total() == grayImage.total()) \{}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}\label{classCascade_aa3081e56f0906bf17a4e5a60f5bce13d}} 
+\index{Cascade@{Cascade}!loadCascade@{loadCascade}}
+\index{loadCascade@{loadCascade}!Cascade@{Cascade}}
+\doxysubsubsection{\texorpdfstring{loadCascade()}{loadCascade()}}
+{\footnotesize\ttfamily int Cascade\+::load\+Cascade (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+load cascade xml file 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & const string\& \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file cascade.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                   \{}
+\DoxyCodeLine{42   humanCascade.load(filePath);}
+\DoxyCodeLine{43   \textcolor{keywordflow}{if} (humanCascade.empty()) \{}
+\DoxyCodeLine{44     std::cout << \textcolor{stringliteral}{"Unable to load Cascade XML file"} << std::endl;}
+\DoxyCodeLine{45     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{46   \}}
+\DoxyCodeLine{47   \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCascade_acb0bbd66e243a0fbdb822382e27a2a27}\label{classCascade_acb0bbd66e243a0fbdb822382e27a2a27}} 
+\index{Cascade@{Cascade}!objectDetect@{objectDetect}}
+\index{objectDetect@{objectDetect}!Cascade@{Cascade}}
+\doxysubsubsection{\texorpdfstring{objectDetect()}{objectDetect()}}
+{\footnotesize\ttfamily int Cascade\+::object\+Detect (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Rect $>$ \&}]{envlp }\end{DoxyParamCaption})}
+
+detect presence of object in a image 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$cv\+::\+Rect$>$\&} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total\+Objects int 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file cascade.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                   \{}
+\DoxyCodeLine{51   cv::Mat imgBlur;}
+\DoxyCodeLine{52   cv::GaussianBlur(grayImage, imgBlur, cv::Size(5, 5), 1.8);}
+\DoxyCodeLine{53   humanCascade.detectMultiScale(imgBlur, envlp, 5, 10, 0, cv::Size(75, 30));}
+\DoxyCodeLine{54   \textcolor{keywordtype}{int} totalObjects = static\_cast<int>(envlp.size());}
+\DoxyCodeLine{55   \textcolor{keywordflow}{return} totalObjects;}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{cascade_8hpp}{cascade.\+hpp}}\item 
+app/\mbox{\hyperlink{cascade_8cpp}{cascade.\+cpp}}\end{DoxyCompactItemize}

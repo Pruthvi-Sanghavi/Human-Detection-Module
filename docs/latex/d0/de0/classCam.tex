@@ -1,0 +1,120 @@
+\hypertarget{classCam}{}\doxysection{Cam Class Reference}
+\label{classCam}\index{Cam@{Cam}}
+
+
+{\ttfamily \#include $<$cam.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}{read\+Video}} (std\+::string demo\+Path)
+\item 
+int \mbox{\hyperlink{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}{read\+Frame\+Image}} (cv\+::\+Mat \&)
+\item 
+int \mbox{\hyperlink{classCam_a33bfd254bc8429eaf422f63d98170653}{color2gray}} (cv\+::\+Mat \&, cv\+::\+Mat \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 38 of file cam.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCam_a33bfd254bc8429eaf422f63d98170653}\label{classCam_a33bfd254bc8429eaf422f63d98170653}} 
+\index{Cam@{Cam}!color2gray@{color2gray}}
+\index{color2gray@{color2gray}!Cam@{Cam}}
+\doxysubsubsection{\texorpdfstring{color2gray()}{color2gray()}}
+{\footnotesize\ttfamily int Cam\+::color2gray (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{frame\+Image,  }\item[{cv\+::\+Mat \&}]{gray\+Image }\end{DoxyParamCaption})}
+
+convert R\+BG image to grayscale 
+\begin{DoxyParams}{Parameters}
+{\em frame\+Image} & cv\+::\+Mat\% \\
+\hline
+{\em gray\+Image} & cv\+::\+Mat\% \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gray\+Img\+Size int 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file cam.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                        \{}
+\DoxyCodeLine{51   cv::cvtColor(frameImage, grayImage, cv::COLOR\_BGR2GRAY);}
+\DoxyCodeLine{52   \textcolor{keywordtype}{int} grayImgSize = static\_cast<int>(grayImage.total() * grayImage.channels());}
+\DoxyCodeLine{53   \textcolor{keywordflow}{return} grayImgSize;}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}\label{classCam_a5b01ca06c80b16f6f19f4e0adc9dd4c9}} 
+\index{Cam@{Cam}!readFrameImage@{readFrameImage}}
+\index{readFrameImage@{readFrameImage}!Cam@{Cam}}
+\doxysubsubsection{\texorpdfstring{readFrameImage()}{readFrameImage()}}
+{\footnotesize\ttfamily int Cam\+::read\+Frame\+Image (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})}
+
+read each frame of the video feed 
+\begin{DoxyParams}{Parameters}
+{\em cv\+::\+M\+A\+T\&} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file cam.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                   \{}
+\DoxyCodeLine{42   \textcolor{keywordflow}{if} (!feed.isOpened()) \{}
+\DoxyCodeLine{43     std::cout << \textcolor{stringliteral}{"error: Feed not initialized \(\backslash\)n\(\backslash\)n"};}
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} 3;}
+\DoxyCodeLine{45   \}}
+\DoxyCodeLine{46   feed.read(img);}
+\DoxyCodeLine{47   \textcolor{keywordflow}{return} 4;}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}\label{classCam_a4d9cc9fdbe1d0f097e674728f83dfee1}} 
+\index{Cam@{Cam}!readVideo@{readVideo}}
+\index{readVideo@{readVideo}!Cam@{Cam}}
+\doxysubsubsection{\texorpdfstring{readVideo()}{readVideo()}}
+{\footnotesize\ttfamily int Cam\+::read\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{demo\+Path }\end{DoxyParamCaption})}
+
+overloaded function to read video from a video file into feed 
+\begin{DoxyParams}{Parameters}
+{\em demo\+Path} & std\+::string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file cam.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                                      \{}
+\DoxyCodeLine{33   feed.open(demoPath);}
+\DoxyCodeLine{34   \textcolor{keywordflow}{if} (!feed.isOpened()) \{}
+\DoxyCodeLine{35     std::cout << \textcolor{stringliteral}{"\(\backslash\)nerror: Demo Video not initialized successfully\(\backslash\)n\(\backslash\)n"};}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38   \textcolor{keywordflow}{return} 2;}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{cam_8hpp}{cam.\+hpp}}\item 
+app/\mbox{\hyperlink{cam_8cpp}{cam.\+cpp}}\end{DoxyCompactItemize}

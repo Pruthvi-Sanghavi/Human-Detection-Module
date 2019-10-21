@@ -27,42 +27,43 @@
  * SOFTWARE.
  */
 
-#ifndef INCLUDE_CASCADE_HPP_
-#define INCLUDE_CASCADE_HPP_
+#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
+#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
 
+#include <string>
+#include <iostream>
+#include <vector>
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <string>
 
-class Cascade : public Cam, public RectPlot {
+class Cascade {
  private:
-  cv::Mat frameImage; /**< variable to hold an image */
-  cv::Mat grayImage; /**< variable to hold an image */
-  cv::CascadeClassifier humanCascade; /**< variable to load trained cascade model */
+  cv::Mat frameImage;  ///< variable to hold an image
+  cv::Mat grayImage;  ///< variable to hold an image
+  cv::CascadeClassifier humanCascade;  ///< variable to load cascade model
 
  public:
   /**
    * load cascade xml file
+   * @param cv::Mat%
+   * @param cv::Mat%
+   * @return int
+   */
+  int init(cv::Mat&, cv::Mat&);
+
+  /**
+   * load cascade xml file
    * @param filePath const string&
-   * @return loadStatus int
+   * @return int
    */
   int loadCascade(const std::string &filePath);
 
   /**
-   * convert RBG image to grayscale
-   * @param filePath const string&
-   * @return loadStatus int
-   */
-  cv::Mat color2gray();
-
-  /**
    * detect presence of object in a image
-   * @param NULL
-   * @return camClose int
+   * @param vector<cv::Rect>&
+   * @return totalObjects int
    */
-  int objectDetect();
-
+  int objectDetect(std::vector<cv::Rect>&);
 };
-
-#endif /* INCLUDE_CASCADE_HPP_ */
+#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
