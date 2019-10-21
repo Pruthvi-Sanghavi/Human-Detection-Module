@@ -34,7 +34,7 @@ SOFTWARE.
 The development exercise deals with the design and development of a perception module for the new product line of Acme Robotics – warehouse management robots (WMR), for carrying the goods from one place to another in a workspace shared by humans. Hence it is desired that WMRs should not collide with anyone. This problem can be solved by implementing our Human Detector(HD) module. Our HD module works on the principle of supervised learning by utilizing Haar Cascade Classifier for object detection (humans in our case). HD module will use an on-board camera provided in the WMR. It will process the captured images (frame by frame) to detect the presence of any human. The module will return the coordinates of the detected human(s) in the 2D-coordinate frame corresponding to the field of view of the robot. This data will contain bottom left (x,y), bottom right (x,y) and height of the enveloping rectangular box around the detected humans. This data can then be processed by other modules developed by Acme Robotics like-real time path planning, to modify the travel path of the WMR to avoid any possibility of a collision.
 
 <p align="center">
-<img src="https://github.com/varunasthana92/hello-world/blob/master/additional_files/expected_behaviour.png">
+<img src="https://github.com/Pruthvi-Sanghavi/MidTermGroup-14/blob/master/additional_files/expected_behaviour.png">
 Expected behavior of the HD Module (Images from: Machine Learning by Andrew Ng, Coursera)
 </p>
 
@@ -98,12 +98,12 @@ Follow the below steps-
 2) Download the images in two different folders namely, pos and neg.
 3) Label the positive images and create a info.lst file in the <pos> directory with entiries for each image to specify the object position: <_filename_> <no_of_instances> <left_top_x_coordinate> <left_top_y_coordinate> <_width_> <_height_>
 <p align="center">
-<img src="https://github.com/varunasthana92/hello-world/blob/master/additional_files/info_list.png">
+<img src="https://github.com/Pruthvi-Sanghavi/MidTermGroup-14/blob/master/additional_files/info_list.png">
 </p>
 
 4) In the <_model_> directory create a background text file "bgNeg.txt" with information of path of each negatives instances <filepath_filename>
 <p align="center">
-<img src="https://github.com/varunasthana92/hello-world/blob/master/additional_files/bgNeg.png">
+<img src="https://github.com/Pruthvi-Sanghavi/MidTermGroup-14/blob/master/additional_files/bgNeg.png">
 </p>
 
 5) From the <model> run the below command in terminal to generate a vector file. Lets name that file as "positives.vec". Here -w and -h are the training model parameters (ensure that the object in positive instances have similar width/height ratio for better performance)
