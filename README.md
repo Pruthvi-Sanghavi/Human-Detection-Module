@@ -136,7 +136,7 @@ cpplint error in header guards and so was required to added full path as a strin
 # How to build
 
 ```
-$ cd MidTermGroup-14
+$ cd Human-Detection-Module
 $ mkdir build
 $ cd build
 $ cmake ..
@@ -146,14 +146,14 @@ $ make test
 # How to run demo
 
 ```
-$ cd MidTermGroup-14
+$ cd Human-Detection-Module
 $ cd build
 $ ./app/humanDetect
 ```
 # How to run tests
 
 ```
-$ cd MidTermGroup-14
+$ cd Human-Detection-Module
 $ cd build
 $ ./test/cpp-test
 ```
