@@ -1,11 +1,16 @@
-Done processing ./test/rectplottest.cpp
-Done processing ./test/main.cpp
-Done processing ./test/camtest.cpp
-Done processing ./test/cascadetest.cpp
-Done processing ./include/cascade.hpp
-Done processing ./include/rectplot.hpp
-Done processing ./include/cam.hpp
-Done processing ./app/cam.cpp
-Done processing ./app/cascade.cpp
-Done processing ./app/main.cpp
-Done processing ./app/rectplot.cpp
+pruthvi@pruthvi:~$ ./cpplint/cpplint.py --recursive --extensions=cpp,hpp ~/Human-Detection-Module/
+/home/pruthvi/Human-Detection-Module/include/cascade.hpp:41:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+Done processing /home/pruthvi/Human-Detection-Module/include/cascade.hpp
+Done processing /home/pruthvi/Human-Detection-Module/app/cam.cpp
+Done processing /home/pruthvi/Human-Detection-Module/app/main.cpp
+Done processing /home/pruthvi/Human-Detection-Module/include/cam.hpp
+Done processing /home/pruthvi/Human-Detection-Module/test/cascadetest.cpp
+Done processing /home/pruthvi/Human-Detection-Module/app/rectplot.cpp
+Done processing /home/pruthvi/Human-Detection-Module/test/camtest.cpp
+Done processing /home/pruthvi/Human-Detection-Module/test/main.cpp
+/home/pruthvi/Human-Detection-Module/test/rectplottest.cpp:33:  Found C++ system header after other header. Should be: rectplottest.h, c system, c++ system, other.  [build/include_order] [4]
+Done processing /home/pruthvi/Human-Detection-Module/test/rectplottest.cpp
+Done processing /home/pruthvi/Human-Detection-Module/app/cascade.cpp
+Done processing /home/pruthvi/Human-Detection-Module/include/rectplot.hpp
+Total errors found: 2
+

@@ -27,8 +27,8 @@
  * SOFTWARE.
  */
 
-#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_
-#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_
+#ifndef INCLUDE_RECTPLOT_HPP_
+#define INCLUDE_RECTPLOT_HPP_
 
 #include <Eigen/Dense>
 #include <iomanip>
@@ -36,8 +36,9 @@
 #include <iostream>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <cascade.hpp>
 
-class RectPlot {
+class RectPlot : public Cascade{
  private:
   int px;  ///< top left pixel x-coordinate of bounding rectangle
   int py;  ///< top left pixel y-coordinate of bounding rectangle
@@ -45,6 +46,7 @@ class RectPlot {
   int ph;  ///< pixel height of bounding rectangle
 
  public:
+  int loadCascade(const std::string &filePath);
   /**
    * plot a rectangular envelop over a detected object
    * @param cv::Mat&
@@ -63,4 +65,4 @@ class RectPlot {
    */
   int worldCord(cv::Mat&);
 };
-#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_RECTPLOT_HPP_
+#endif  // INCLUDE_RECTPLOT_HPP_

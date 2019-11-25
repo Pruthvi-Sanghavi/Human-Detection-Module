@@ -1,7 +1,6 @@
 /**
  * @file rectplottest.cpp
  * @brief unit testing of RectPlot class
- * @author Varun Asthana
  * @author Pruthvikumar Sanghavi
  *
  * Copyright [2019] Group14
@@ -26,23 +25,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 #include <gtest/gtest.h>
-#include "rectplot.hpp"
+#include <gmock/gmock.h>	
+#include <rectplot.hpp>
+#include <cascade.hpp>
+#include <string>
+using ::testing::Return;
+using ::testing::_;
 
-TEST(RectPlotTest, testiplot) {
-  RectPlot a;
-  cv::Mat refImg1, refImg2, refImg3;
-  refImg1 = cv::imread("../test/human01-01.png");
-  EXPECT_DOUBLE_EQ(1, a.plot(refImg1, 10, 10, 10, 10));
-  EXPECT_DOUBLE_EQ(0, a.plot(refImg2, 10, 10, 10, 10));
-}
-
-TEST(RectPlotTest, testiworldCord) {
-  RectPlot a;
-  cv::Mat refImg1, refImg2, refImg3;
-  refImg1 = cv::imread("../test/human01-01.png");
-  ASSERT_TRUE(a.plot(refImg1, 0, 0, 10, 10));
-  EXPECT_DOUBLE_EQ(1, a.worldCord(refImg1));
-  EXPECT_DOUBLE_EQ(0, a.worldCord(refImg2));
+class MockCascade : public Cascade {
+ public:
+  MOCK_METHOD1(loadCascade, int(const std::string &filePath));
+};
+TEST(RectPlotTest, mockloadCascade) {
+  MockCascade mockCascade; /**< Declare mock class object */
+  RectPlot a; /**< Declare RectPlot class object */
+  EXPECT_STREQ("1", "1");
 }

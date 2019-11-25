@@ -27,8 +27,8 @@
  * SOFTWARE.
  */
 
-#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
-#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
+#ifndef INCLUDE_CASCADE_HPP_
+#define INCLUDE_CASCADE_HPP_
 
 #include <string>
 #include <iostream>
@@ -38,10 +38,9 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 class Cascade {
- private:
-  cv::Mat frameImage;  ///< variable to hold an image
+ private:cv::Mat frameImage;  ///< variable to hold an image
   cv::Mat grayImage;  ///< variable to hold an image
-  cv::CascadeClassifier humanCascade;  ///< variable to load cascade model
+  // cv::CascadeClassifier humanCascade;  ///< variable to load cascade model
 
  public:
   /**
@@ -50,6 +49,7 @@ class Cascade {
    * @param cv::Mat%
    * @return int
    */
+  cv::CascadeClassifier humanCascade;
   int init(cv::Mat&, cv::Mat&);
 
   /**
@@ -57,7 +57,7 @@ class Cascade {
    * @param filePath const string&
    * @return int
    */
-  int loadCascade(const std::string &filePath);
+  virtual int loadCascade(const std::string &filePath);
 
   /**
    * detect presence of object in a image
@@ -65,5 +65,7 @@ class Cascade {
    * @return totalObjects int
    */
   int objectDetect(std::vector<cv::Rect>&);
+  virtual ~Cascade(){
+  }
 };
-#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CASCADE_HPP_
+#endif  // INCLUDE_CASCADE_HPP_

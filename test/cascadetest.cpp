@@ -28,8 +28,10 @@
  */
 
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include "cam.hpp"
 #include "cascade.hpp"
+
 
 TEST(CascadeTest, testinit) {
   Cascade a;
