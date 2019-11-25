@@ -27,8 +27,8 @@
  * SOFTWARE.
  */
 
-#ifndef _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_
-#define _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_
+#ifndef INCLUDE_CAM_HPP_
+#define INCLUDE_CAM_HPP_
 
 #include <iostream>
 #include <string>
@@ -62,4 +62,4 @@ class Cam {
    */
   int color2gray(cv::Mat&, cv::Mat&);
 };
-#endif  // _HOME_VARUN_ECLIPSE_WORKSPACE_OPENCV_INCLUDE_CAM_HPP_
+#endif  // INCLUDE_CAM_HPP_
