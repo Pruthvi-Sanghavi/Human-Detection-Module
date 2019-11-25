@@ -28,6 +28,21 @@
  */
 
 #include "rectplot.hpp"
+#include <Eigen/Dense>
+#include <iomanip>
+#include <string>
+#include <iostream>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <cascade.hpp>
+
+int RectPlot::loadCascade(const std::string &filePath) {
+  if (humanCascade.load(filePath)) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
 
 int RectPlot::plot(cv::Mat &img, int x, int y, int w, int h) {
   px = x;
