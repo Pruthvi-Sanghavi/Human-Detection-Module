@@ -92,6 +92,6 @@ cd build
 
 ```
 
-
+Cascade and Rectplot classes have been used for the Google Mock testing.
 
 
