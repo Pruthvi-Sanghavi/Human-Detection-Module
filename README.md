@@ -8,7 +8,7 @@
 ```
 MIT License
 
-Copyright (c) 2019 Varun Asthana & Pruthvikumar Sanghavi
+Copyright (c) 2019 Pruthvikumar Sanghavi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,10 @@ SOFTWARE.
 The development exercise deals with the design and development of a perception module for the new product line of Acme Robotics – warehouse management robots (WMR), for carrying the goods from one place to another in a workspace shared by humans. Hence it is desired that WMRs should not collide with anyone. This problem can be solved by implementing our Human Detector(HD) module. Our HD module works on the principle of supervised learning by utilizing Haar Cascade Classifier for object detection (humans in our case). HD module will use an on-board camera provided in the WMR. It will process the captured images (frame by frame) to detect the presence of any human. The module will return the coordinates of the detected human(s) in the 2D-coordinate frame corresponding to the field of view of the robot. This data will contain bottom left (x,y), bottom right (x,y) and height of the enveloping rectangular box around the detected humans. This data can then be processed by other modules developed by Acme Robotics like-real time path planning, to modify the travel path of the WMR to avoid any possibility of a collision.
 
 <p align="center">
-<img src="https://github.com/Pruthvi-Sanghavi/MidTermGroup-14/blob/master/additional_files/expected_behaviour.png">
-Expected behavior of the HD Module (Images from: Machine Learning by Andrew Ng, Coursera)
+<img src="https://github.com/Pruthvi-Sanghavi/Human-Detection-Module/blob/master/additional_files/demo.gif" height="400px">
 </p>
 
-## AIP
+## Agile Iterative Process
 
 [Team Review Notes](https://docs.google.com/document/d/1l4MobMQTboG7WJ2R91XRQfdRSrPovTTvhYkaVo5h1yo/edit?usp=sharing) 
 
