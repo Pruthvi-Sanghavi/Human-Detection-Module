@@ -1,7 +1,6 @@
 # Human Obstacle Detector Using OpenCV Haar Cascade
 
-[![Build Status](https://travis-ci.org/Pruthvi-Sanghavi/MidTermGroup-14.svg?branch=master)](https://travis-ci.org/Pruthvi-Sanghavi/MidTermGroup-14)
-[![Coverage Status](https://coveralls.io/repos/github/Pruthvi-Sanghavi/MidTermGroup-14/badge.svg?branch=master)](https://coveralls.io/github/Pruthvi-Sanghavi/MidTermGroup-14?branch=master)
+[![Build Status](https://travis-ci.com/Pruthvi-Sanghavi/Human-Detection-Module.svg?branch=master)](https://travis-ci.com/Pruthvi-Sanghavi/Human-Detection-Module)[![Coverage Status](https://coveralls.io/repos/github/Pruthvi-Sanghavi/MidTermGroup-14/badge.svg?branch=master)](https://coveralls.io/github/Pruthvi-Sanghavi/MidTermGroup-14?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## License Disclaimer
