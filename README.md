@@ -3,32 +3,6 @@
 [![Build Status](https://travis-ci.com/Pruthvi-Sanghavi/Human-Detection-Module.svg?branch=master)](https://travis-ci.com/Pruthvi-Sanghavi/Human-Detection-Module)[![Coverage Status](https://coveralls.io/repos/github/Pruthvi-Sanghavi/MidTermGroup-14/badge.svg?branch=master)](https://coveralls.io/github/Pruthvi-Sanghavi/MidTermGroup-14?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## License Disclaimer
-```
-MIT License
-
-Copyright (c) 2019 Pruthvikumar Sanghavi
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
----
-
 ## Overview
 The development exercise deals with the design and development of a perception module for the new product line of Acme Robotics – warehouse management robots (WMR), for carrying the goods from one place to another in a workspace shared by humans. Hence it is desired that WMRs should not collide with anyone. This problem can be solved by implementing our Human Detector(HD) module. Our HD module works on the principle of supervised learning by utilizing Haar Cascade Classifier for object detection (humans in our case). HD module will use an on-board camera provided in the WMR. It will process the captured images (frame by frame) to detect the presence of any human. The module will return the coordinates of the detected human(s) in the 2D-coordinate frame corresponding to the field of view of the robot. This data will contain bottom left (x,y), bottom right (x,y) and height of the enveloping rectangular box around the detected humans. This data can then be processed by other modules developed by Acme Robotics like-real time path planning, to modify the travel path of the WMR to avoid any possibility of a collision.
 
